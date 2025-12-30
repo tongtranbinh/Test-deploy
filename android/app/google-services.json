@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "385758494000",
+    "project_id": "group19-bluemuoon",
+    "storage_bucket": "group19-bluemuoon.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385758494000:android:5451f5b3fbdede84ffdcf5",
+        "android_client_info": {
+          "package_name": "com.example.ams"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK-6gIyR5N3zKVGKMzOFRbF9xswnM5CVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
