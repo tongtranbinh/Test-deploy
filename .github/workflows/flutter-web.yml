@@ -26,8 +26,7 @@ jobs:
         run: flutter build web
 
       - name: Update base href for GitHub Pages
-        run: |
-          sed -i 's|<base href="/">|<base href="/Apartment-Management-Solution/">|' build/web/index.html
+        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 
       - name: Create 404.html
         run: |
