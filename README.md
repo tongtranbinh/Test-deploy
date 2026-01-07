@@ -7,19 +7,18 @@
    - [Dành cho Ban Quản Lý](#dành-cho-ban-quản-lý)
    - [Dành cho Cư Dân](#dành-cho-cư-dân)
    - [Dành cho Khách](#dành-cho-khách)
-3. [Phân Công Nhiệm Vụ](#phân-công-nhiệm-vụ)
-4. [Bắt Đầu](#bắt-đầu)
+3. [Bắt Đầu](#bắt-đầu)
    - [Yêu Cầu Tiên Quyết](#yêu-cầu-tiên-quyết)
    - [Cài Đặt](#cài-đặt)
-5. [Cấu Trúc Thư Mục](#cấu-trúc-thư-mục)
-6. [Giới Thiệu Các Mô-đun](#giới-thiệu-các-mô-đun)
+4. [Cấu Trúc Thư Mục](#cấu-trúc-thư-mục)
+5. [Giới Thiệu Các Mô-đun](#giới-thiệu-các-mô-đun)
    - [Core](#core)
    - [Features](#features)
-7. [Hướng Dẫn Phát Triển](#hướng-dẫn-phát-triển)
+6. [Hướng Dẫn Phát Triển](#hướng-dẫn-phát-triển)
    - [Chiến Lược Nhánh](#chiến-lược-nhánh)
    - [Quy Chuẩn Viết Mã](#quy-chuẩn-viết-mã)
-8. [Đóng Góp](#đóng-góp)
-9. [Giấy Phép](#giấy-phép)
+7. [Đóng Góp](#đóng-góp)
+8. [Giấy Phép](#giấy-phép)
 
 ---
 
@@ -50,14 +49,6 @@ Giải pháp Quản Lý Chung Cư là một ứng dụng toàn diện được t
 ### Dành cho Khách:
 - **Kiểm Soát Truy Cập**: Quá trình check-in và check-out nhanh chóng cho nhân viên được phép.
 
-## Phân Công Nhiệm Vụ
-
-| Họ và Tên            | Nhiệm vụ                                           |
-|------------------------|--------------------------------------------------|
-| **Lưu Thịnh Khang**   | Tích hợp cơ sở dữ liệu và các chức năng trong ứng dụng. |
-| **Nguyễn Viết Tuấn Kiệt** | Thiết lập cơ sở dữ liệu, thiết kế giao diện tổng thể và đảm bảo tính đồng bộ. |
-| **Bùi Quang Phong**    | Thu thập thông tin, phân tích và phát triển giao diện hiển thị.      |
-
 ## Bắt Đầu
 
 ### Yêu Cầu Tiên Quyết
@@ -71,7 +62,7 @@ Hãy đảm bảo cài đặt các công cụ sau:
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/HaiAu2501/Apartment-Management-Solution.git
+   git clone 
    cd Apartment-Management-Solution
    ```
 
