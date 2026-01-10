@@ -865,6 +865,21 @@ class _ResidentsTabState extends State<ResidentsTab> {
                           }
                         }
                       },
+                      onViewProfile: () async {
+                        // When viewing profile, set selection and fetch detailed profile
+                        final profileId = _getStringValue(fields, 'profileId');
+                        setState(() {
+                          selectedRoomInfo = Map<String, dynamic>.from(fields);
+                          isAdditionalInfoVisible = false;
+                        });
+                        if (profileId.isNotEmpty) {
+                          await fetchProfile(profileId);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Cư dân này chưa có profileId.')),
+                          );
+                        }
+                      },
                     );
                   },
                 ),
@@ -1100,6 +1115,7 @@ class ResidentListItem extends StatefulWidget {
     required String phone,
   }) onUpdate;
   final Function onDelete;
+  final void Function() onViewProfile;
 
   const ResidentListItem({
     Key? key,
@@ -1107,6 +1123,7 @@ class ResidentListItem extends StatefulWidget {
     required this.resident,
     required this.onUpdate,
     required this.onDelete,
+    required this.onViewProfile,
   }) : super(key: key);
 
   @override
@@ -1332,6 +1349,12 @@ class _ResidentListItemState extends State<ResidentListItem> {
                       widget.resident['apartmentNumber']?['integerValue']?.toString() ?? '',
                       style: const TextStyle(fontSize: 16),
                     ),
+                  ),
+                  // View Profile Icon
+                  IconButton(
+                    icon: const Icon(Icons.person_search, color: Colors.green),
+                    onPressed: widget.onViewProfile,
+                    tooltip: 'Xem hồ sơ gia đình',
                   ),
                   // Edit and Delete Icons
                   IconButton(
