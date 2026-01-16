@@ -167,38 +167,61 @@ class _QueueCardState extends State<QueueCard> {
               // Thao tác (Căn giữa các icon)
               Expanded(
                 flex: 2,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center, // Căn giữa các icon
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.check, color: Colors.green),
-                      tooltip: 'Phê duyệt',
-                      onPressed: approveUser,
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.close, color: Colors.red),
-                      tooltip: 'Từ chối',
-                      onPressed: rejectUser,
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.visibility, color: Colors.blue),
-                      tooltip: 'Xem thêm',
-                      onPressed: () {
-                        setState(() {
-                          isExpanded = !isExpanded;
-                        });
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.edit, color: Colors.orange),
-                      tooltip: 'Chỉnh sửa',
-                      onPressed: () {
-                        setState(() {
-                          isExpanded = !isExpanded;
-                        });
-                      },
-                    ),
-                  ],
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center, // Căn giữa các icon
+                    children: [
+                      SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: IconButton(
+                          icon: const Icon(Icons.check, color: Colors.green),
+                          tooltip: 'Phê duyệt',
+                          onPressed: approveUser,
+                          padding: EdgeInsets.zero,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: IconButton(
+                          icon: const Icon(Icons.close, color: Colors.red),
+                          tooltip: 'Từ chối',
+                          onPressed: rejectUser,
+                          padding: EdgeInsets.zero,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: IconButton(
+                          icon: const Icon(Icons.visibility, color: Colors.blue),
+                          tooltip: 'Xem thêm',
+                          onPressed: () {
+                            setState(() {
+                              isExpanded = !isExpanded;
+                            });
+                          },
+                          padding: EdgeInsets.zero,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: IconButton(
+                          icon: const Icon(Icons.edit, color: Colors.orange),
+                          tooltip: 'Chỉnh sửa',
+                          onPressed: () {
+                            setState(() {
+                              isExpanded = !isExpanded;
+                            });
+                          },
+                          padding: EdgeInsets.zero,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
