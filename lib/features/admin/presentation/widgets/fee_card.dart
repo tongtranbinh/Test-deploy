@@ -276,24 +276,37 @@ class _FeeCardState extends State<FeeCard> {
         // Thao Tác: IconButtons
         Expanded(
           flex: 1,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                icon: const Icon(Icons.edit, color: Colors.blue),
-                onPressed: () {
-                  setState(() {
-                    isEditing = true;
-                  });
-                },
-                tooltip: 'Chỉnh sửa',
-              ),
-              IconButton(
-                icon: const Icon(Icons.delete, color: Colors.red),
-                onPressed: _deleteFee,
-                tooltip: 'Xóa',
-              ),
-            ],
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 40,
+                  height: 40,
+                  child: IconButton(
+                    icon: const Icon(Icons.edit, color: Colors.blue),
+                    onPressed: () {
+                      setState(() {
+                        isEditing = true;
+                      });
+                    },
+                    tooltip: 'Chỉnh sửa',
+                    padding: EdgeInsets.zero,
+                  ),
+                ),
+                SizedBox(
+                  width: 40,
+                  height: 40,
+                  child: IconButton(
+                    icon: const Icon(Icons.delete, color: Colors.red),
+                    onPressed: _deleteFee,
+                    tooltip: 'Xóa',
+                    padding: EdgeInsets.zero,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],

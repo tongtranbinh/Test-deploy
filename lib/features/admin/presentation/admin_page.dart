@@ -145,13 +145,119 @@ class AdminPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            const Text(
-              'Trang chủ đang được phát triển...',
-              style: TextStyle(fontSize: 18, color: Colors.grey),
+            // Footer
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey[900],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Thông tin chung cư
+                      Expanded(
+                        child: _buildFooterSection(
+                          title: 'Thông Tin Chung Cư',
+                          icon: Icons.apartment,
+                          items: [
+                            'Tên: Tòa Nhà Blue Moon',
+                            'Địa chỉ: Số 1 Đại Cồ Việt, Quận Hai Bà Trưng, Thủ Đô Hà Nội',
+                            'Năm thành lập: 2025',
+                            'Tổng số căn hộ: 198',
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+
+                      // Thông tin liên lạc
+                      Expanded(
+                        child: _buildFooterSection(
+                          title: 'Thông Tin Liên Lạc',
+                          icon: Icons.phone,
+                          items: [
+                            'Điện thoại: 0913508157',
+                            'Email: contact@bluemoon.vn',
+                            'Hotline: 1900 123 456',
+                            'Giờ làm việc: 8:00 - 17:00 (Thứ 2 - Thứ 6)',
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+
+                      // Thông tin phát triển
+                      Expanded(
+                        child: _buildFooterSection(
+                          title: 'Thông Tin Phát Triển',
+                          icon: Icons.code,
+                          items: [
+                            'Được phát triển bởi: Nhóm CNPM 19',
+                            'Thành viên: Tống Trần Bình, Phạm Anh Khôi, Nguyễn Quốc Bảo Long, Bùi Đình Phẩm, Nguyễn Cường'
+                            'Công nghệ sử dụng: Flutter, Dart, Firebase',
+                            'Phiên bản: 1.0.0',
+      
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Divider(color: Colors.white30, height: 30),
+                  Text(
+                    '© 2025 Apartment Management System. All rights reserved.',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                ],
+              ),
             ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
+    );
+  }
+
+  // Widget để hiển thị section footer
+  Widget _buildFooterSection({
+    required String title,
+    required IconData icon,
+    required List<String> items,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Icon(icon, color: Colors.blue[400], size: 20),
+            const SizedBox(width: 8),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        ...items.map(
+          (item) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Text(
+              item,
+              style: const TextStyle(
+                fontSize: 13,
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

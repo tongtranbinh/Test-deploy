@@ -123,18 +123,23 @@ class _FeesPageState extends State<FeesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.backgroundColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           'Phí & Đóng góp',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
-        backgroundColor: AppTheme.surfaceColor,
-        elevation: 0,
+        backgroundColor: AppTheme.primaryColor,
+        elevation: 2,
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: _loadFees,
+            tooltip: 'Tải lại',
           ),
         ],
       ),
@@ -142,7 +147,7 @@ class _FeesPageState extends State<FeesPage> {
         children: [
           // Search and Filter Section
           Container(
-            color: AppTheme.surfaceColor,
+            color: Colors.white,
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
@@ -156,7 +161,7 @@ class _FeesPageState extends State<FeesPage> {
                       borderSide: BorderSide.none,
                     ),
                     filled: true,
-                    fillColor: AppTheme.backgroundColor,
+                    fillColor: Colors.grey[100],
                   ),
                   onChanged: (value) {
                     setState(() {
@@ -234,15 +239,15 @@ class _FeesPageState extends State<FeesPage> {
             _applyFilters();
           });
         },
-        backgroundColor: AppTheme.surfaceColor,
+        backgroundColor: Colors.white,
         selectedColor: AppTheme.accentColor2.withOpacity(0.2),
         checkmarkColor: AppTheme.primaryColor,
         labelStyle: TextStyle(
-          color: isSelected ? AppTheme.primaryColor : AppTheme.secondaryTextColor,
+          color: isSelected ? AppTheme.primaryColor : Colors.black87,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
         ),
         side: BorderSide(
-          color: isSelected ? AppTheme.primaryColor : AppTheme.borderColor,
+          color: isSelected ? AppTheme.primaryColor : Colors.grey[300]!,
         ),
       ),
     );
@@ -263,10 +268,11 @@ class _FeesPageState extends State<FeesPage> {
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
       elevation: 2,
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(
-          color: isOverdue ? AppTheme.dangerColor.withOpacity(0.3) : Colors.transparent,
+          color: isOverdue ? AppTheme.dangerColor.withOpacity(0.3) : Colors.grey[200]!,
           width: 2,
         ),
       ),

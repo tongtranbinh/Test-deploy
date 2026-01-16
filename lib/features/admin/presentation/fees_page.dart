@@ -52,13 +52,16 @@ class _FeesPageState extends State<FeesPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Đặt TabBar ở đầu thân của Scaffold
+          // TabBar
           Container(
-            color: Theme.of(context).primaryColor,
+            color: const Color(0xFFF5F5F5),
             child: TabBar(
               controller: _tabController,
+              labelColor: Colors.green,
+              indicatorColor: Colors.green,
               tabs: const [
                 Tab(text: 'Thông tin chung'),
                 Tab(text: 'Phí bắt buộc'),
@@ -79,12 +82,12 @@ class _FeesPageState extends State<FeesPage> with SingleTickerProviderStateMixin
                   tableRepository: tableRepository,
                   authService: widget.authService,
                   idToken: widget.idToken,
-                ), // Placeholder cho tab "Phí bắt buộc"
+                ),
                 DonationsTab(
                   tableRepository: tableRepository,
                   authService: widget.authService,
                   idToken: widget.idToken,
-                ), // Placeholder cho tab "Khoản đóng góp"
+                ),
               ],
             ),
           ),
